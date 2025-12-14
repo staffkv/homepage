@@ -37,6 +37,7 @@ export default function RootLayout({
          enableSystem
          disableTransitionOnChange
         >
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></script>
         <Header />
         {children}
         </ThemeProvider>
