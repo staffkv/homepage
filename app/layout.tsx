@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Kanit } from "next/font/google";
+import { Inter, Kanit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/header";
 import { ThemeProvider } from "@/providers/theme-providers";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,7 +38,7 @@ export default function RootLayout({
          enableSystem
          disableTransitionOnChange
         >
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></script>
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></Script>
         <Header />
         {children}
         </ThemeProvider>
