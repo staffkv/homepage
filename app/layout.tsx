@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Kanit } from "next/font/google";
+import { Inter, Kanit, Karla } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/header";
 import { ThemeProvider } from "@/providers/theme-providers";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
-const inter = Inter({
-  variable: "--font-inter",
+const karla = Karla({
+  variable: "--font-karla",
   subsets: ["latin"],
-});
+  weight: ["400", "600", "700"],
+})
 
 const kanit = Kanit({
   variable: "--font-kanit",
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pt" suppressHydrationWarning>
       <body
-        className={`${kanit.variable} antialiased`}
+        className={`${karla.variable} antialiased`}
       >
         <ThemeProvider
          attribute='class'
