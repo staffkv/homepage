@@ -1,5 +1,6 @@
 import { translations } from "@/translations/translations"
 import Link from "next/link"
+import { ThemeToggle } from "../theme-toggle"
 
 type Language = "pt" | "en"
 
@@ -13,7 +14,7 @@ export function Header() {
         <div className="font-normal">{t.title}</div>
       </div>
       <div className="flex justify-between items-center md:ml-auto gap-2.5">
-        <button>🌙</button>
+        <ThemeToggle />
         <button>🇧🇷</button>
         {translations[language].nav.map((link) => (
           <Link key={link.href} href={link.href}>{link.label}</Link>

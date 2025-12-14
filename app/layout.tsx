@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Kanit } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header/header";
+import { ThemeProvider } from "@/providers/theme-providers";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,12 +26,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt" suppressHydrationWarning>
       <body
         className={`${kanit.variable} antialiased`}
       >
+        <ThemeProvider
+         attribute='class'
+         defaultTheme="system"
+         enableSystem
+         disableTransitionOnChange
+        >
         <Header />
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );
