@@ -12,17 +12,17 @@ interface SocialLinkProps {
 const socialLinks: SocialLinkProps[] = [
   {
     icon: "/linkedin.png",
-    label: "Kevin - Linkedin",
+    label: "Kevin - LinkedIn",
     href: "https://www.linkedin.com/in/ksilvaf/"
   },
   {
     icon: "/github-desktop.png",
-    label: "Staffkv- Github",
+    label: "Staffkv - Github",
     href: "https://github.com/staffkv"
   },
   {
     icon: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png',
-    label: "Staffkv- Youtube",
+    label: "Staffkv - Youtube",
     href: "https://x.com/staffkvv",
   },
 ]
@@ -35,9 +35,9 @@ export function ContentLinks() {
           <Image src="https://github.com/staffkv.png" alt="Kevin Ferreira" width={80} height={80} />
         </Avatar>
         <div className="mb-6">
-          <p className="text-[15px] leading-[1.6] text-gray-600 dark:text-gray-400 m-0">
-            Atuo como <strong className="font-semibold text-gray-900 dark:text-gray-400">Engenheiro de Software Sênior</strong> em um lugar tão <strong className="font-semibold text-gray-900 dark:text-gray-400">secreto</strong> que nem eu posso contar direito.{" "}
-            gosto de resolver problemas, aprender continuamente e construir boas soluções.
+          <p className="text-[15px] m-0 text-(--text-color-secondary)">
+            Atuo como <strong className="font-semibold">Engenheiro de Software Sênior</strong> em um lugar tão <strong className="font-semibold">secreto</strong> que sou impedido de contar.{" "}
+            Interesso-me por <strong className="font-semibold">SaaS, open source e DevOps</strong>.
           </p>
         </div>
       </div>
@@ -49,8 +49,8 @@ export function ContentLinks() {
           rel="noopener noreferrer"
           className="mt-2 block"
         >
-          <div className="border dark:border-gray-700 rounded-xl dark:hover:shadow-[0_1px_3px_0_rgba(0,0,0,0.2),0_1px_2px_0_rgba(0,0,0,0.1)] transition-all duration-200 ease-in-out  dark:hover:bg-gray-500 h-15 flex items-center justify-between px-4">
-            <div className="flex items-center gap-4">
+          <div className="rounded-xl h-15 flex items-center justify-between px-4 bg-(--link-bg) border border-(--link-border) hover:border-(--link-border-hover) text-(--link-text)">
+            <div className="flex items-center gap-4 transition duration-200 ease-in-out ">
               {typeof link.icon === 'string' ? (
                 <Image
                   src={link.icon}
@@ -63,12 +63,12 @@ export function ContentLinks() {
                 <link.icon width={35} height={35} className="object-contain" />
               )}
 
-             <h1 className="font-medium text-gray-900 dark:text-gray-100">
-  {link.label}
-</h1>
+              <span className="font-medium text-(--link-text)]">
+                {link.label}
+              </span>
             </div>
 
-            <span className="text-gray-400 dark:text-gray-500 text-sm">↗</span>
+            <span className=" text-sm">↗</span>
           </div>
         </Link>
       ))}

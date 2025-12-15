@@ -11,13 +11,13 @@ export function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return <button className="w-8 h-8">🌙</button>
+    return <button className="w-7 h-7">🌙</button>
   }
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="w-8 h-8"
+      className="w-7 h-7"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? "☀️" : "🌙"}
