@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="max-w-150 mx-auto pt-8 mt-16">
       <div className="flex items-center justify-center gap-6 mb-4">
         <Link 
-          href="https://github.com/staffkvv" 
+          href="https://github.com/staffkv" 
           target="_blank"
           className="flex items-center gap-2 text-(--text-color-secondary)"
         >
