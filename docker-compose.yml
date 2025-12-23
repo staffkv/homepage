@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: homepage_db
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: docker
+    ports:
+      - '5432:5432'
