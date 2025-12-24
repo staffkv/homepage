@@ -1,48 +1,14 @@
-
 "use client"
 import Link from "next/link"
 import { Avatar } from "@radix-ui/react-avatar"
 import Image from "next/image"
 import { translations } from "@/translations/translations"
 import { useLanguage } from "@/providers/language-provider"
-
-interface SocialLinkProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>> | string
-  label: string
-  href: string
-}
-const socialLinks: SocialLinkProps[] = [
-  {
-    icon: "/github-desktop.png",
-    label: "Staffkv - Github",
-    href: "https://github.com/staffkv"
-  },
-  {
-    icon: "/linkedin.png",
-    label: "Kevin - LinkedIn",
-    href: "https://www.linkedin.com/in/ksilvaf/"
-  },
-    {
-    icon: "/mal.png",
-    label: "Staffkv - My Anime List",
-    href: "https://myanimelist.net/profile/staffkv",
-  },
-  {
-    icon: "/paraibajs.jpeg",
-    label: "ParaibaJS - Comunidade de JavaScript na Paraíba",
-    href: "https://linktr.ee/paraibajs",
-  },
-  {
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png',
-    label: "Staffkv - Youtube",
-    href: "https://x.com/staffkvv",
-  }
-]
+import { socialLinks } from "@/types/socialinks"
 
 export function ContentLinks() {
   const { language } = useLanguage()
   const t = translations[language]
-
   return (
     <div className="w-full max-w-150 mx-auto py-8  px-4 sm:px-0 ">
       <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-5">
