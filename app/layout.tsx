@@ -3,6 +3,7 @@ import { Karla } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/providers/theme-providers";
+import { LanguageProvider } from "@/providers/language-provider";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
 
@@ -33,9 +34,11 @@ export default function RootLayout({
          enableSystem
          disableTransitionOnChange
         >
-        <Script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></Script>
-        <Header />
-        {children}
+        <LanguageProvider>
+          <Script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></Script>
+          <Header />
+          {children}
+        </LanguageProvider>
         </ThemeProvider>
         <Footer />
       </body>

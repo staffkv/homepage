@@ -1,7 +1,10 @@
 
+"use client"
 import Link from "next/link"
 import { Avatar } from "@radix-ui/react-avatar"
 import Image from "next/image"
+import { translations } from "@/translations/translations"
+import { useLanguage } from "@/providers/language-provider"
 
 interface SocialLinkProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>> | string
@@ -37,6 +40,9 @@ const socialLinks: SocialLinkProps[] = [
 ]
 
 export function ContentLinks() {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   return (
     <div className="w-full max-w-150 mx-auto py-8  px-4 sm:px-0 ">
       <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-5">
@@ -44,10 +50,10 @@ export function ContentLinks() {
           <Image src="https://github.com/staffkv.png" alt="Kevin Ferreira" width={80} height={80} />
         </Avatar>
         <div className="mb-6">
-          <p className="text-[15px] m-0 text-(--text-color-secondary)">
-            Atuo como <strong className="font-semibold">Engenheiro de Software Sênior</strong> em um lugar tão <strong className="font-semibold">secreto</strong> que sou impedido de contar.{" "}
-            Interesso-me por <strong className="font-semibold">SaaS, open source, DevOps e Arquitetura de Software.</strong>.
-          </p>
+          <p
+            className="text-[15px] m-0 text-(--text-color-secondary)"
+            dangerouslySetInnerHTML={{ __html: t.about }}
+          />
         </div>
       </div>
       {socialLinks.map((link) => (
