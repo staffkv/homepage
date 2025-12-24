@@ -1,6 +1,8 @@
+import { getRandomPhrase } from "@/lib/randomPhrases"
 import Link from "next/link"
 
 export function Footer() {
+  const phrase = getRandomPhrase()
   return (
     <footer className="max-w-150 mx-auto pt-8 mt-16">
       <div className="flex items-center justify-center gap-6 mb-4">
@@ -27,7 +29,7 @@ export function Footer() {
         </Link>
       </div>
       <div className="text-center text-sm pb-8 font-semibold text-(--text-color-tertiary)">
-        Se Deus é por nós, quem será contra nós?
+        {phrase}
       </div>
     </footer>
   )

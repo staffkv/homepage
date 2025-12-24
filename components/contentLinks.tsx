@@ -11,20 +11,30 @@ interface SocialLinkProps {
 }
 const socialLinks: SocialLinkProps[] = [
   {
-    icon: "/linkedin.png",
-    label: "Kevin - LinkedIn",
-    href: "https://www.linkedin.com/in/ksilvaf/"
-  },
-  {
     icon: "/github-desktop.png",
     label: "Staffkv - Github",
     href: "https://github.com/staffkv"
   },
   {
+    icon: "/linkedin.png",
+    label: "Kevin - LinkedIn",
+    href: "https://www.linkedin.com/in/ksilvaf/"
+  },
+    {
+    icon: "/mal.png",
+    label: "Staffkv - My Anime List",
+    href: "https://myanimelist.net/profile/staffkv",
+  },
+  {
+    icon: "/paraibajs.jpeg",
+    label: "ParaibaJS - Comunidade de JavaScript na Paraíba",
+    href: "https://linktr.ee/paraibajs",
+  },
+  {
     icon: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png',
     label: "Staffkv - Youtube",
     href: "https://x.com/staffkvv",
-  },
+  }
 ]
 
 export function ContentLinks() {
@@ -37,7 +47,7 @@ export function ContentLinks() {
         <div className="mb-6">
           <p className="text-[15px] m-0 text-(--text-color-secondary)">
             Atuo como <strong className="font-semibold">Engenheiro de Software Sênior</strong> em um lugar tão <strong className="font-semibold">secreto</strong> que sou impedido de contar.{" "}
-            Interesso-me por <strong className="font-semibold">SaaS, open source e DevOps</strong>.
+            Interesso-me por <strong className="font-semibold">SaaS, open source, DevOps e Arquitetura de Software.</strong>.
           </p>
         </div>
       </div>
