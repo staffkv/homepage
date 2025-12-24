@@ -1,10 +1,8 @@
-import { title } from "process";
-
 export const translations = {
   pt: {
     name: "Kevin Ferreira",
     title: "Engenheiro de Software",
-     nav: [
+    nav: [
       { label: "/projetos", href: "/projects" },
       { label: "/artigos", href: "/articles" },
       { label: "/marcadores", href: "/bookmarks" },

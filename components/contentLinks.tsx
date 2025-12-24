@@ -1,6 +1,5 @@
 
 import Link from "next/link"
-import { Linkedin, Github, Youtube, FileText, X, Twitter } from "lucide-react"
 import { Avatar } from "@radix-ui/react-avatar"
 import Image from "next/image"
 

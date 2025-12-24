@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Kanit, Karla } from "next/font/google";
+import { Karla } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/providers/theme-providers";
