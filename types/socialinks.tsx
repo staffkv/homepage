@@ -25,8 +25,8 @@ export const socialLinks: SocialLinkProps[] = [
     href: "https://linktr.ee/paraibajs",
   },
   {
-    icon: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png',
-    label: "Staffkv - Youtube",
-    href: "https://x.com/staffkvv",
+    icon: "/zeety.png",
+    label: "Zeety - Automatize seu atendimento com IA",
+    href: "https://zeety.com.br",
   }
 ]
