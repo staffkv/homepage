@@ -1,5 +1,5 @@
+import { ArticlesContent } from "@/components/articlesContent"
+
 export default function Home() {
-  return (
-    <div>articles</div>
-  )
+  return <ArticlesContent />
 }

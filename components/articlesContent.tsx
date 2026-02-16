@@ -1,4 +1,4 @@
-import { Bookmark, bookmarks } from "@/types/bookmarks"
+import { articles, Article } from "@/types/articles"
 
 function formatMonth(dateStr: string) {
   const d = new Date(dateStr)
@@ -7,18 +7,22 @@ function formatMonth(dateStr: string) {
   return `${month}/${year}`
 }
 
-export function BookmarksContent() {
-  const sortedBookmarks = [...bookmarks].sort(
-    (a: Bookmark, b: Bookmark) => new Date(b.savedAt).getTime() - new Date(a.savedAt).getTime()
+function renderTags(tags: string[]) {
+  return tags.map((tag) => `#${tag}`).join("  ")
+}
+
+export function ArticlesContent() {
+  const sortedArticles = [...articles].sort(
+    (a: Article, b: Article) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )
 
   return (
     <div className="w-full max-w-150 mx-auto py-8 px-4 sm:px-0">
       <div className="overflow-hidden rounded-xl border border-(--link-border) bg-(--link-bg)">
-        {sortedBookmarks.map((bookmark, index) => (
+        {sortedArticles.map((article, index) => (
           <a
-            key={bookmark.id}
-            href={bookmark.url}
+            key={article.id}
+            href={article.url}
             target="_blank"
             rel="noopener noreferrer"
             className={`block px-5 py-5 text-(--link-text) transition-colors duration-200 hover:bg-(--link-bg-hover) ${
@@ -26,9 +30,14 @@ export function BookmarksContent() {
             }`}
           >
             <div className="flex items-start justify-between gap-4">
-              <h3 className="min-w-0 text-base font-medium sm:text-lg">{bookmark.title}</h3>
+              <div className="min-w-0">
+                <h3 className="text-base font-medium sm:text-lg">{article.title}</h3>
+                <p className="mt-1 text-sm text-(--text-color-secondary)">
+                  {renderTags(article.tags)}
+                </p>
+              </div>
               <span className="shrink-0 text-sm text-(--text-color-secondary) sm:text-base">
-                {formatMonth(bookmark.savedAt)}
+                {formatMonth(article.publishedAt)}
               </span>
             </div>
           </a>
