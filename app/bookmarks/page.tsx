@@ -1,9 +1,10 @@
-import { BookmarksContent } from "@/components/bookmarksContent";
+import { BookmarksSection, Intro } from "@/components/sections"
 
-export default function Home() {
+export default function Bookmarks() {
   return (
-    <div>
-      <BookmarksContent />
-    </div>
+    <>
+      <Intro />
+      <BookmarksSection num="01" standalone />
+    </>
   )
 }

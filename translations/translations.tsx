@@ -2,19 +2,109 @@ export const translations = {
   pt: {
     name: "Kevin Ferreira",
     title: "Engenheiro de Software",
+    greeting: "Oi, eu sou o Kevin.",
+    lead: "Engenheiro de Software Sênior. Interessado em SaaS, open source, DevOps e arquitetura de software.",
     about: "Atuo como <strong>Engenheiro de Software Sênior</strong> em um lugar tão <strong>secreto</strong> que sou impedido de contar. Interesso-me por <strong>SaaS, Open source, DevOps e Arquitetura de Software.</strong>",
-    nav: [
-      { label: "/marcadores", href: "/bookmarks" },
-      { label: "/projetos", href: "/projects" },
-    ]
+    sections: {
+      about: "Sobre",
+      experience: "Experiência",
+      projects: "Projetos",
+      community: "Comunidade",
+      bookmarks: "Marcadores",
+      interests: "Competências",
+    },
+    seeAll: "ver todos",
+    present: "Atual",
+    current: "Atual",
+    back: "voltar",
+    interestGroups: [
+      { label: "linguagens", items: ["JavaScript", "TypeScript", "Java", "SQL"] },
+      { label: "frontend", items: ["React", "Next.js", "Tailwind CSS", "Angular"] },
+      { label: "backend", items: ["Node.js", "Fastify", "NestJS", "Spring Boot", "Quarkus"] },
+      { label: "dados", items: ["PostgreSQL", "Redis", "MySQL", "DB2", "Oracle"] },
+      { label: "cloud & devops", items: ["AWS", "GCP", "Docker", "Kubernetes", "OpenShift", "Jenkins", "ArgoCD", "GitHub Actions"] },
+      { label: "arquitetura", items: ["Microsserviços", "Orientada a Eventos", "Sistemas Distribuídos", "SaaS Multi-Tenant"] },
+      { label: "ia", items: ["OpenAI", "LangChain", "Engenharia de Prompt", "Agentes de IA"] },
+      { label: "observabilidade", items: ["OpenTelemetry", "Sentry", "New Relic", "Grafana", "Prometheus"] },
+    ],
+    community: [
+      {
+        name: "ParaibaJS",
+        description: "Comunidade de JavaScript na Paraíba",
+        tag: "Comunidade",
+        href: "https://linktr.ee/paraibajs",
+        logo: "/paraibajs.jpeg",
+      },
+      {
+        name: "MyAnimeList",
+        description: "O que estou assistindo",
+        tag: "Anime",
+        href: "https://myanimelist.net/profile/staffkv",
+        logo: "/mal.png",
+      },
+    ],
+    contactTitle: "Vamos conversar",
+    contactText: "Tem uma ideia, uma pergunta ou só quer trocar uma ideia? Me chama em qualquer uma das redes abaixo.",
+    dock: {
+      theme: "Alternar tema",
+      expandAll: "Expandir experiências",
+      collapseAll: "Recolher experiências",
+      language: "Switch to English",
+    },
   },
   en: {
     name: "Kevin Ferreira",
     title: "Software Engineer",
+    greeting: "Hi, I’m Kevin.",
+    lead: "Senior Software Engineer. Into SaaS, open source, DevOps and software architecture.",
     about: "I work as a <strong>Senior Software Engineer</strong> at a place so <strong>secret</strong> that I'm not allowed to talk about it. I'm interested in <strong>SaaS, Open source, DevOps and Software Architecture.</strong>",
-    nav: [
-      { label: "/bookmarks", href: "/bookmarks" },
-      { label: "/projects", href: "/projects" },
-    ]
-  }
+    sections: {
+      about: "About",
+      experience: "Experience",
+      projects: "Projects",
+      community: "Community",
+      bookmarks: "Bookmarks",
+      interests: "Skills",
+    },
+    seeAll: "see all",
+    present: "Present",
+    current: "Current",
+    back: "back",
+    interestGroups: [
+      { label: "languages", items: ["JavaScript", "TypeScript", "Java", "SQL"] },
+      { label: "frontend", items: ["React", "Next.js", "Tailwind CSS", "Angular"] },
+      { label: "backend", items: ["Node.js", "Fastify", "NestJS", "Spring Boot", "Quarkus"] },
+      { label: "data", items: ["PostgreSQL", "Redis", "MySQL", "DB2", "Oracle"] },
+      { label: "cloud & devops", items: ["AWS", "GCP", "Docker", "Kubernetes", "OpenShift", "Jenkins", "ArgoCD", "GitHub Actions"] },
+      { label: "architecture", items: ["Microservices", "Event-Driven", "Distributed Systems", "Multi-Tenant SaaS"] },
+      { label: "ai", items: ["OpenAI", "LangChain", "Prompt Engineering", "AI Agents"] },
+      { label: "observability", items: ["OpenTelemetry", "Sentry", "New Relic", "Grafana", "Prometheus"] },
+    ],
+    community: [
+      {
+        name: "ParaibaJS",
+        description: "JavaScript community in Paraíba, Brazil",
+        tag: "Community",
+        href: "https://linktr.ee/paraibajs",
+        logo: "/paraibajs.jpeg",
+      },
+      {
+        name: "MyAnimeList",
+        description: "What I’m watching",
+        tag: "Anime",
+        href: "https://myanimelist.net/profile/staffkv",
+        logo: "/mal.png",
+      },
+    ],
+    contactTitle: "Get in touch",
+    contactText: "Got an idea, a question, or just want to chat? Reach out on any of the links below.",
+    dock: {
+      theme: "Toggle theme",
+      expandAll: "Expand all roles",
+      collapseAll: "Collapse all roles",
+      language: "Mudar para português",
+    },
+  },
 }
+
+export type Translation = (typeof translations)["pt"]
