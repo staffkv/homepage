@@ -1,33 +1,148 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --ink: #09090b;
+  --ink-muted: #52525b;
+  --ink-faint: #71717a;
+  --ink-fainter: #a1a1aa;
+  --line: #e4e4e7;
+  --line-strong: #d4d4d8;
+  --surface: #fafafa;
+  --surface-hover: #f4f4f5;
+  --tile: #ffffff;
+  --accent-line: #86efac;
+  --tag-bg: #d1fae5;
+  --tag-fg: #047857;
+  --selection-bg: #18181b;
+  --selection-fg: #ffffff;
+  --noise-blend: multiply;
+  --noise-opacity: 0.25;
+}
+
+.dark {
+  --bg: #0b0b0d;
+  --ink: #fafafa;
+  --ink-muted: #a1a1aa;
+  --ink-faint: #8b8b94;
+  --ink-fainter: #63636b;
+  --line: #232327;
+  --line-strong: #34343a;
+  --surface: #141417;
+  --surface-hover: #1c1c20;
+  --tile: #111114;
+  --accent-line: rgba(34, 197, 94, 0.38);
+  --tag-bg: rgba(16, 185, 129, 0.14);
+  --tag-fg: #6ee7b7;
+  --selection-bg: #fafafa;
+  --selection-fg: #09090b;
+  --noise-blend: screen;
+  --noise-opacity: 0.08;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-bg: var(--bg);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-ink-fainter: var(--ink-fainter);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-tile: var(--tile);
+  --color-tag-bg: var(--tag-bg);
+  --color-tag-fg: var(--tag-fg);
+
+  --animate-wave: wave 2.4s ease-in-out 0.6s 2 both;
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dock-in {
+  from { opacity: 0; transform: translate(-50%, 1rem); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
 @layer base {
-  :root {
-    --bg-color: #ffffff;
-    --text-color-primary: #374151;
-    --text-color-headings: #111827;
-    --text-color-secondary: #6b7280;
-    --text-color-tertiary: #9ca3af;
-    --border-color: #e5e7eb;
-    --link-bg: #ffffff;
-    --link-bg-hover: #f9fafb;
-    --link-border: #e5e7eb;
-    --link-border-hover: #d1d5db;
-    --link-text: #1f2937;
+  html {
+    font-feature-settings: "cv11", "ss03", "kern", "calt";
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  .dark {
-    --bg-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
-    --text-color-primary: #d1d5db;
-    --text-color-headings: #f9fafb;
-    --text-color-secondary: #9ca3af;
-    --text-color-tertiary: #6b7280;
-    --border-color: #374151;
-    --link-bg: rgb(24 24 27 / var(--tw-bg-opacity, 1));
-    --link-bg-hover: #27272a;
-    --link-border: #374151;
-    --link-border-hover: #4b5563;
-    --link-text: #f3f4f6;
+  body {
+    letter-spacing: -0.005em;
+  }
+
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-fg);
   }
 }
 
+@utility noise-backdrop {
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: var(--noise-opacity);
+    mix-blend-mode: var(--noise-blend);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-size: 280px 280px;
+  }
+}
+
+@utility lead-link {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  background-image: linear-gradient(to top, var(--accent-line) 0 28%, transparent 28%);
+  transition: background-image 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  &:hover {
+    background-image: linear-gradient(to top, var(--accent-line) 0 100%, transparent 100%);
+  }
+}
+
+@utility bio {
+  & strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  }
+  .dock {
+    animation: dock-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s backwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-wave { animation: none; }
+}

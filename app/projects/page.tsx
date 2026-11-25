@@ -1,5 +1,10 @@
-import { ProjectsContent } from "@/components/projectsContent"
+import { Intro, ProjectsSection } from "@/components/sections"
 
 export default function Projects() {
-  return <ProjectsContent />
+  return (
+    <>
+      <Intro />
+      <ProjectsSection num="01" standalone />
+    </>
+  )
 }
