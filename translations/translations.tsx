@@ -43,8 +43,8 @@ export const translations = {
         logo: "/mal.png",
       },
     ],
-    contactTitle: "Vamos conversar",
-    contactText: "Tem uma ideia, uma pergunta ou só quer trocar uma ideia? Me chama em qualquer uma das redes abaixo.",
+    contactTitle: "Vamos trabalhar juntos?",
+    contactText: "Estou aberto a novas oportunidades, projetos freelance e conversas sobre SaaS, arquitetura e IA. Me manda um e-mail em",
     dock: {
       theme: "Alternar tema",
       expandAll: "Expandir experiências",
@@ -96,8 +96,8 @@ export const translations = {
         logo: "/mal.png",
       },
     ],
-    contactTitle: "Get in touch",
-    contactText: "Got an idea, a question, or just want to chat? Reach out on any of the links below.",
+    contactTitle: "Let’s work together?",
+    contactText: "I’m open to new opportunities, freelance projects and conversations about SaaS, architecture and AI. Drop me an email at",
     dock: {
       theme: "Toggle theme",
       expandAll: "Expand all roles",

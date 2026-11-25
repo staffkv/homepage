@@ -169,6 +169,8 @@ export function InterestsSection({ num = "05" }: { num?: string }) {
   )
 }
 
+const CONTACT_EMAIL = "ferreirakevin325@gmail.com"
+
 const contactLinks = [
   { label: "GitHub", href: "https://github.com/staffkv" },
   { label: "LinkedIn", href: socialLinks.find((l) => l.href.includes("linkedin"))?.href ?? "https://www.linkedin.com/in/ksilvaf/" },
@@ -182,7 +184,16 @@ export function ContactSection() {
       <h2 id="contato-h" className="m-0 mb-[0.85rem] text-[1.0625rem] font-bold tracking-[-0.018em] text-ink">
         {t.contactTitle}
       </h2>
-      <p className="m-0 mx-auto max-w-[30rem] text-[0.95rem] leading-[1.6] text-ink-muted">{t.contactText}</p>
+      <p className="m-0 mx-auto max-w-[30rem] text-[0.95rem] leading-[1.6] text-ink-muted">
+        {t.contactText}{" "}
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="border-b border-line-strong font-medium text-ink transition-colors hover:border-ink"
+        >
+          {CONTACT_EMAIL}
+        </a>
+        .
+      </p>
       <p className="mt-4 font-mono text-[0.78rem] tracking-[-0.005em] text-ink-faint">
         {contactLinks.map((l, i) => (
           <span key={l.label}>
