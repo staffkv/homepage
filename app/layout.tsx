@@ -6,6 +6,7 @@ import { LanguageProvider } from "@/providers/language-provider";
 import { Footer } from "@/components/footer";
 import { Dock } from "@/components/dock";
 import Script from "next/script";
+import { GlyphField } from "@/components/glyph-field";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <LanguageProvider>
+            <GlyphField />
             <Script defer src="https://cloud.umami.is/script.js" data-website-id="3a6ca941-026a-45f8-a1b2-623f06b1c804"></Script>
             <main className="relative z-10 mx-auto max-w-[40rem] px-6 pt-20 pb-32">
               {children}
